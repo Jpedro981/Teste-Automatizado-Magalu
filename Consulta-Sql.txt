@@ -1,0 +1,34 @@
+SELECT 
+    c.nome AS nome_cliente,
+    a.numero_apolice AS numero_apolice,
+    a.tipo_seguro AS tipo_seguro,
+    a.valor_premio AS valor_premio
+FROM 
+    clientes c
+INNER JOIN 
+    apolices a 
+ON 
+    c.cliente_id = a.cliente_id
+WHERE 
+    a.status = 'ativa';
+
+Explicação da Consulta
+SELECT:
+
+Escolhe os campos que você deseja exibir no resultado:
+c.nome: Nome do cliente (da tabela clientes).
+a.numero_apolice: Número da apólice (da tabela apólices).
+a.tipo_seguro: Tipo do seguro (da tabela apólices).
+a.valor_premio: Valor do prêmio (da tabela apólices).
+FROM:
+
+Indica a tabela principal (clientes, apelidada como c).
+INNER JOIN:
+
+Conecta a tabela clientes com a tabela apólices usando a relação cliente_id.
+ON:
+
+Define a condição para a junção: c.cliente_id = a.cliente_id.
+WHERE:
+
+Filtra apenas as apólices com status "ativa".
